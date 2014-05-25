@@ -32,6 +32,8 @@ gem 'activerecord-postgis-adapter'
 # geojson
 gem 'rgeo-geojson'
 
+gem 'annotate', group: :development
+
 # pry
 gem 'pry-rails', :group => :development
 

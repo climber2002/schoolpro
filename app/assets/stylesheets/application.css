@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+#info-box {
+  background-color: white;
+  height: 35px;
+  width: 200px;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid grey;
+  min-height: 5px;
+  display: inline-block;
+  font-size: 25px;
+}

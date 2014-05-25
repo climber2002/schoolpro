@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: provinces
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)      not null
+#  created_at :datetime
+#  updated_at :datetime
+#  geom       :spatial          multipolygon, 4326
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

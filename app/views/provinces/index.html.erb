@@ -7,6 +7,7 @@
         width: 1200px;
         height: 800px;
       }
+
     </style>
 
     <script type="text/javascript">
@@ -25,9 +26,35 @@
         map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
         
         //Load GeoJSON
-        map.data.loadGeoJson("/gabon.json");
+        map.data.loadGeoJson("<%= provinces_path format: :json -%>");
         
-        zoomToIstanbul();
+        map.setZoom(7);
+        var gabon = new google.maps.LatLng(1.000000, 11.45000000);
+        map.setCenter(gabon);
+
+        //Create an info box for displaying names
+        var infoBox = document.createElement('div');
+        infoBox.innerHTML = "<div id='info-box'></div>";
+        map.controls[google.maps.ControlPosition.RIGHT_TOP].push(infoBox);
+
+        map.data.addListener('mouseover', function(event) {
+          map.data.revertStyle();
+          $('#info-box').text(event.feature.getProperty('name'));
+          map.data.overrideStyle(event.feature, { fillColor: 'red' });
+
+
+        });
+
+        map.data.addListener('mouseout', function(event){
+          map.data.revertStyle();
+        });
+
+        map.data.setStyle(function(feature) {
+          return { fillColor: 'green',
+                  strokeWeight: 1}
+        });
+
+
       }
 
       function zoomToIstanbul() {
