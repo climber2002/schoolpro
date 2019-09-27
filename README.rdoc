@@ -1,3 +1,8 @@
 == README
 
 This project is a demonstration how to integrate PostGIS and google maps into Rails.
+
+Check the blog at 
+
+http://climber2002.github.io/blog/2014/05/18/postgis-and-google-maps-in-rails-part-1
+http://climber2002.github.io/blog/2014/05/26/integrate-postgis-and-google-maps-in-rails-part-2
